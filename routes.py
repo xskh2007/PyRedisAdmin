@@ -99,9 +99,11 @@ def view():
     from data_view import general_html, title_html
     fullkey = request.GET.get('key', '')
     refmodel = request.GET.get('refmodel', None)
-
+    print 1111111111,fullkey
     cl, cur_server_index, cur_db_index = get_cl()
+    print 2222222
     if cl.exists(fullkey):
+        print 33333333
         title_html = title_html(fullkey, cur_server_index, cur_db_index)
         general_html = general_html(fullkey, cur_server_index, cur_db_index, cl)
         out_html = title_html + general_html

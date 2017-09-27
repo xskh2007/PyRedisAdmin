@@ -52,12 +52,12 @@
 		
 		function onClick(event, treeId, treeNode, clickFlag) {
 			if (!treeNode.isParent){
-				parent.document.getElementById("cmsMainFrame").src="/view?s="+{{cur_server_index}}+"&db="+{{cur_db_index}}+"&key="+treeNode.id;
+				parent.document.getElementById("cmsMainFrame").src="/view?s="+{{cur_server_index}}+"&db="+{{cur_db_index}}+"&key="+encodeURIComponent(treeNode.id);
 			}
 		}
 		
 		function zTreeOnRemove(event, treeId, treeNode) {
-			parent.document.getElementById("cmsMainFrame").src = "/delete?s="+{{cur_server_index}}+"&db="+{{cur_db_index}}+"&key="+treeNode.id+"&cursor="+ '{{pre_scan_cursor}}';
+			parent.document.getElementById("cmsMainFrame").src = "/delete?s="+{{cur_server_index}}+"&db="+{{cur_db_index}}+"&key="+encodeURIComponent(treeNode.id)+"&cursor="+ '{{pre_scan_cursor}}';
 		}
 
 	
